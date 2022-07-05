@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import Swal from 'sweetalert2';
 import auth from '../firebase.init';
 
 const Login = () => {
@@ -17,6 +18,13 @@ const Login = () => {
     }
     if(loading){
         return <div className='w-screen h-screen flex justify-center items-center'>Loading...</div>
+    }
+    if(error){
+        Swal.fire(
+            `ops`,
+            `${error.message}`,
+            'error'
+          )
     }
     const handleLoginSubmit =(e) => {
         e.preventDefault();
