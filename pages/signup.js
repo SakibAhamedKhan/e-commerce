@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
@@ -11,8 +12,14 @@ const Signup = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
-
+    const router = useRouter();
     
+    if(user){
+        router.push('/');
+    }
+    if(loading){
+        return <div className='w-screen h-screen flex justify-center items-center'>Loading...</div>
+    }
     const handleSignupSubmit = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
