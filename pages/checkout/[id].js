@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 import Layout from '../../components/Layout';
 import auth from '../../firebase.init';
 
-const checkout = ({ product }) => {
+const Checkout = ({ product }) => {
     const [user, loading, error] = useAuthState(auth);
     const [data, setData] = useState({});
     const router = useRouter();
@@ -40,7 +40,7 @@ const checkout = ({ product }) => {
             paid: parseInt(data.quantity) * parseInt(product.price),
         }
 
-        fetch('http://localhost:5000/order',{
+        fetch('https://tranquil-gorge-95745.herokuapp.com/order',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -86,10 +86,10 @@ const checkout = ({ product }) => {
     );
 };
 
-export default checkout;
+export default Checkout;
 export async function getServerSideProps({ params }) {
     const { id } = params;
-    const datafetch = await fetch(`http://localhost:5000/products/${id}`);
+    const datafetch = await fetch(`https://tranquil-gorge-95745.herokuapp.com/products/${id}`);
     const data = await datafetch.json();
 
     return {

@@ -4,7 +4,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 
 
-const signup = () => {
+const Signup = () => {
     const [
         createUserWithEmailAndPassword,
         user,
@@ -53,4 +53,4 @@ const signup = () => {
     );
 };
 
-export default signup;
+export default Signup;

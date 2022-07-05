@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 
-const productsAddToCart = ({ product }) => {
+const ProductsAddToCart = ({ product }) => {
     console.log(product);
     const [refresh, setRefresh] = useState('');
     const router = useRouter();
@@ -69,10 +69,10 @@ const productsAddToCart = ({ product }) => {
     );
 };
 
-export default productsAddToCart;
+export default ProductsAddToCart;
 export async function getServerSideProps({ params }) {
     const { id } = params;
-    const datafetch = await fetch(`http://localhost:5000/products/${id}`);
+    const datafetch = await fetch(`https://tranquil-gorge-95745.herokuapp.com/products/${id}`);
     const data = await datafetch.json();
 
     return {

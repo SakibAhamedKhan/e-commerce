@@ -4,7 +4,7 @@ import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 
-const login = () => {
+const Login = () => {
     const [
         signInWithEmailAndPassword,
         user,
@@ -58,4 +58,4 @@ const login = () => {
     );
 };
 
-export default login;
+export default Login;

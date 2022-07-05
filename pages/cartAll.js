@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 
-const cartAll = ({ products }) => {
+const CartAll = ({ products }) => {
     const router = useRouter();
     const [data, setData] = useState([]);
     useEffect(() => {
@@ -20,7 +20,7 @@ const cartAll = ({ products }) => {
             <div className='my-10'>
                 {
                     data.map(m => (
-                        <div key={data.id} className="card max-w-3xl bg-base-100 shadow-md hover:shadow-xl mx-auto my-2">
+                        <div key={m._id} className="card max-w-3xl bg-base-100 shadow-md hover:shadow-xl mx-auto my-2">
                             <div className=" p-5 flex justify-between items-center">
                                 <div>
                                     <img className='h-20' src={m.image} alt="" />
@@ -42,10 +42,10 @@ const cartAll = ({ products }) => {
     );
 };
 
-export default cartAll;
+export default CartAll;
 
 export async function getServerSideProps() {
-    const datafetch = await fetch('http://localhost:5000/products');
+    const datafetch = await fetch('https://tranquil-gorge-95745.herokuapp.com/products');
     const data = await datafetch.json();
     return {
         props: {

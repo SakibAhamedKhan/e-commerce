@@ -4,14 +4,14 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import Layout from '../components/Layout';
 import auth from '../firebase.init';
 
-const orders = () => {
+const Orders = () => {
     const [user, loading, error] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
     const router = useRouter();
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order/${user.email}`)
+            fetch(`https://tranquil-gorge-95745.herokuapp.com/order/${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
@@ -62,4 +62,4 @@ const orders = () => {
     );
 };
 
-export default orders;
+export default Orders;

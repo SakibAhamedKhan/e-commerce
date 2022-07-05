@@ -37,7 +37,7 @@ export default function Home({ products }) {
 }
 
 export async function getServerSideProps() {
-  const datafetch = await fetch('http://localhost:5000/products');
+  const datafetch = await fetch('https://tranquil-gorge-95745.herokuapp.com/products');
   const data = await datafetch.json();
   return {
     props: {

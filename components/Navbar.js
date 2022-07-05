@@ -27,7 +27,7 @@ const Navbar = ({ refresh }) => {
     return (
         <div className="navbar bg-base-100 px-5 shadow-md">
             <div className="flex-1">
-                <Link href='/' className="normal-case"><span className='font-semibold text-xl'>E-Commerce</span></Link>
+                <Link href='/' className="normal-case"><span className='font-semibold text-xl cursor-pointer'>E-Commerce</span></Link>
             </div>
             <div className="flex-none">
                 <ul className="menu menu-horizontal p-0">
