@@ -22,28 +22,28 @@ const signup = () => {
         createUserWithEmailAndPassword(email, password);
     }
     return (
-        <div class="hero min-h-screen w-full bg-base-200">
-            <div class="hero-content text-center">
-                <div class="card flex-shrink-0 w-full md:w-96 lg:w-96 max-w-sm shadow-2xl bg-base-100">
-                    <div class="card-body">
+        <div className="hero min-h-screen w-full bg-base-200">
+            <div className="hero-content text-center">
+                <div className="card flex-shrink-0 w-full md:w-96 lg:w-96 max-w-sm shadow-2xl bg-base-100">
+                    <div className="card-body">
                         <form onSubmit={handleSignupSubmit}>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Email</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" placeholder="email" name='email' class="input input-bordered" />
+                                <input type="email" placeholder="email" name='email' className="input input-bordered" />
                             </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Password</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="password" name='password' class="input input-bordered" />
-                                <label class="label">
-                                    <Link href="/login" class="label-text-alt link link-hover font-md   text-red-500">Login?</Link>
+                                <input type="password" placeholder="password" name='password' className="input input-bordered" />
+                                <label className="label">
+                                    <Link href="/login" className="label-text-alt link link-hover font-md   text-red-500">Login?</Link>
                                 </label>
                             </div>
-                            <div class="form-control mt-6">
-                                <button type='submit' class="btn btn-success">Signup</button>
+                            <div className="form-control mt-6">
+                                <button type='submit' className="btn btn-success">Signup</button>
                             </div>
                         </form>
                     </div>
